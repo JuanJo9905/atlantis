@@ -2,8 +2,7 @@
 
 .layout {
   min-height: 100vh;
-  width: 100vw; /* ← CAMBIO: Forzar ancho completo del viewport */
-  overflow-x: hidden; /* ← NUEVO: Prevenir scroll horizontal */
+  width: 100%;
   background: linear-gradient(135deg, var(--atlantis-primary) 0%, var(--atlantis-secondary) 50%, var(--atlantis-tertiary) 100%);
   color: var(--text-primary);
   font-family: var(--font-family-primary);
@@ -33,19 +32,12 @@
   border: none;
   color: var(--text-accent);
   cursor: pointer;
-  padding: calc(var(--spacing-sm) * 1.5); /* ← AUMENTADO 50%: padding más grande */
+  padding: var(--spacing-sm);
   border-radius: var(--border-radius-sm);
   transition: all var(--transition-normal);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px; /* ← AUMENTADO 50%: era implícito ~40px */
-  height: 60px; /* ← AUMENTADO 50%: era implícito ~40px */
-}
-
-.layout__menu-button svg {
-  width: 36px; /* ← AUMENTADO 50%: era 24px */
-  height: 36px; /* ← AUMENTADO 50%: era 24px */
 }
 
 .layout__menu-button:hover {
@@ -68,23 +60,27 @@
   margin: 0;
 }
 
+/* Main Content */
 .layout__main {
   margin-top: var(--header-height);
   min-height: calc(100vh - var(--header-height));
-  width: 100vw; /* ← CAMBIO: Forzar ancho completo */
+  width: 100%;
   position: relative;
-  overflow-x: hidden; /* ← NUEVO: Prevenir scroll horizontal */
 }
 
 .layout__content {
   width: 100%;
   margin: 0;
-  padding: 0; /* ← SIN PADDING AQUÍ */
+  padding: 0;
   box-sizing: border-box;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
+  .layout__content {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+  
   .layout__header {
     padding: 0 var(--spacing-md);
   }
@@ -92,23 +88,12 @@
   .layout__title {
     font-size: var(--font-size-lg);
   }
-  
-  /* Menu button ligeramente más pequeño en móvil */
-  .layout__menu-button {
-    width: 50px; /* ← PROPORCIONAL para móvil */
-    height: 50px;
-    padding: var(--spacing-sm);
-  }
-  
-  .layout__menu-button svg {
-    width: 30px; /* ← PROPORCIONAL para móvil */
-    height: 30px;
-  }
 }
 
-@media (min-width: 1000px) {
+/* Para pantallas muy anchas */
+@media (min-width: 1400px) {
   .layout__content {
-    max-width: none;
-    padding: 0;
+    max-width: 1600px;
+    padding: var(--spacing-2xl) var(--spacing-3xl);
   }
 }

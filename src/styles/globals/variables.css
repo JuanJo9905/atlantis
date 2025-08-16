@@ -1,3 +1,4 @@
+/* src/styles/globals/variables.css */
 :root {
   /* Colores Atlantis */
   --atlantis-primary: #0c1445;
@@ -74,12 +75,12 @@
   --transition-slow: 0.4s ease;
   --transition-bounce: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   
-  /* Z-index */
+  /* Z-index - Actualizar valores para móvil */
   --z-dropdown: 1000;
   --z-sticky: 1020;
   --z-fixed: 1030;
-  --z-modal-backdrop: 1040;
-  --z-modal: 1050;
+  --z-modal-backdrop: 9998;
+  --z-modal: 9999;
   --z-popover: 1060;
   --z-tooltip: 1070;
 }

@@ -21,6 +21,9 @@ export const Sidebar = ({ isOpen, onToggle, onNavigate, currentPage }) => {
     onNavigate(pageId);
   };
 
+  // Agregar logs para debug en móvil
+  console.log('Sidebar isOpen:', isOpen);
+
   return (
     <>
       <aside className={`sidebar ${isOpen ? 'sidebar--open' : ''}`}>

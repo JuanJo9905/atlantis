@@ -3,8 +3,8 @@
 .sidebar {
   position: fixed;
   top: 0;
-  left: calc(-1 * var(--sidebar-width));
-  width: var(--sidebar-width);
+  left: calc(-1 * var(--sidebar-width-mobile));
+  width: var(--sidebar-width-mobile);
   height: 100vh;
   background: linear-gradient(
     180deg, 
@@ -132,10 +132,32 @@
   font-style: italic;
 }
 
-/* Responsive */
+/* Responsive - Asegurar que funcione en móvil */
 @media (max-width: 768px) {
   .sidebar {
-    width: var(--sidebar-width-mobile);
-    left: calc(-1 * var(--sidebar-width-mobile));
+    width: var(--sidebar-width-mobile) !important;
+    left: calc(-1 * var(--sidebar-width-mobile)) !important;
+    z-index: 9999 !important; /* Z-index más alto para móvil */
+    transform: translateX(0) !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .sidebar--open {
+    left: 0 !important;
+    transform: translateX(0) !important;
+  }
+  
+  .sidebar__overlay {
+    z-index: 9998 !important; /* Un nivel menos que el sidebar */
+    display: block !important;
+  }
+  
+  /* Forzar que el contenido del sidebar sea visible */
+  .sidebar__header,
+  .sidebar__nav,
+  .sidebar__footer {
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 }
