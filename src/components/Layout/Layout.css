@@ -1,0 +1,114 @@
+/* src/components/Layout/Layout.css */
+
+.layout {
+  min-height: 100vh;
+  width: 100vw; /* ← CAMBIO: Forzar ancho completo del viewport */
+  overflow-x: hidden; /* ← NUEVO: Prevenir scroll horizontal */
+  background: linear-gradient(135deg, var(--atlantis-primary) 0%, var(--atlantis-secondary) 50%, var(--atlantis-tertiary) 100%);
+  color: var(--text-primary);
+  font-family: var(--font-family-primary);
+}
+
+/* Header */
+.layout__header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: var(--header-height);
+  background: var(--surface-primary);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--spacing-lg);
+  z-index: var(--z-fixed);
+  box-sizing: border-box;
+}
+
+.layout__menu-button {
+  background: none;
+  border: none;
+  color: var(--text-accent);
+  cursor: pointer;
+  padding: calc(var(--spacing-sm) * 1.5); /* ← AUMENTADO 50%: padding más grande */
+  border-radius: var(--border-radius-sm);
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px; /* ← AUMENTADO 50%: era implícito ~40px */
+  height: 60px; /* ← AUMENTADO 50%: era implícito ~40px */
+}
+
+.layout__menu-button svg {
+  width: 36px; /* ← AUMENTADO 50%: era 24px */
+  height: 36px; /* ← AUMENTADO 50%: era 24px */
+}
+
+.layout__menu-button:hover {
+  background: var(--border-primary);
+  transform: scale(1.05);
+}
+
+.layout__menu-button:focus {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+.layout__title {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--atlantis-accent), var(--atlantis-light), var(--atlantis-deep));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+.layout__main {
+  margin-top: var(--header-height);
+  min-height: calc(100vh - var(--header-height));
+  width: 100vw; /* ← CAMBIO: Forzar ancho completo */
+  position: relative;
+  overflow-x: hidden; /* ← NUEVO: Prevenir scroll horizontal */
+}
+
+.layout__content {
+  width: 100%;
+  margin: 0;
+  padding: 0; /* ← SIN PADDING AQUÍ */
+  box-sizing: border-box;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .layout__header {
+    padding: 0 var(--spacing-md);
+  }
+  
+  .layout__title {
+    font-size: var(--font-size-lg);
+  }
+  
+  /* Menu button ligeramente más pequeño en móvil */
+  .layout__menu-button {
+    width: 50px; /* ← PROPORCIONAL para móvil */
+    height: 50px;
+    padding: var(--spacing-sm);
+  }
+  
+  .layout__menu-button svg {
+    width: 30px; /* ← PROPORCIONAL para móvil */
+    height: 30px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .layout__content {
+    max-width: none;
+    padding: 0;
+  }
+}

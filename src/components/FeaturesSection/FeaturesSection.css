@@ -1,0 +1,1104 @@
+/* src/components/FeaturesSection/FeaturesSection.css */
+
+.features-section {
+  padding: var(--spacing-xl) 0 var(--spacing-2xl) 0; /* ← REDUCIDO 20% */
+  min-height: 76vh; /* ← REDUCIDO 20% (95vh * 0.8) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  transition: all var(--transition-slow);
+  background: transparent !important;
+}
+
+/* FORZAR fondos transparentes en todas las escenas */
+.features-section--slate-to-blue,
+.features-section--night-ocean,
+.features-section--mermaid-magic,
+.features-section--love-journey,
+.features-section--atlantis-reveal {
+  background: transparent !important;
+}
+
+.features-section__story-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: var(--spacing-2xl) var(--spacing-lg); /* ← REDUCIDO */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-2xl); /* ← REDUCIDO */
+  box-sizing: border-box;
+}
+
+/* Texto de la historia */
+.features-section__story-text-container {
+  text-align: center;
+  margin-bottom: var(--spacing-xl); /* ← REDUCIDO */
+  width: 100%;
+  max-width: none;
+  padding: 0 var(--spacing-lg);
+}
+
+.features-section__story-text {
+  font-size: var(--font-size-3xl);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-weight: 300;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  animation: atlantis-fade-in 1s ease-out forwards;
+  max-width: 1200px;
+  text-align: center;
+  padding: 0 var(--spacing-lg);
+  margin: 0 auto;
+}
+
+.features-section__story-text--large {
+  font-size: var(--font-size-5xl);
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--atlantis-accent), var(--atlantis-light), var(--atlantis-deep));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+  letter-spacing: 0.1em;
+  margin-top: var(--spacing-lg);
+}
+
+/* Contenedor de animación - AUMENTADO 30% en ancho */
+.features-section__animation-container {
+  position: relative;
+  width: 910px; /* ← AUMENTADO 30% (700px * 1.3) */
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: var(--spacing-xl) 0; /* ← REDUCIDO */
+  max-width: 90vw;
+}
+
+/* Ondas de fondo */
+.features-section__waves {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 250px;
+  overflow: hidden;
+  opacity: 0.3;
+}
+
+.features-section__wave {
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 300%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(96, 165, 250, 0.15) 25%, 
+    rgba(96, 165, 250, 0.3) 50%, 
+    rgba(96, 165, 250, 0.15) 75%, 
+    transparent 100%);
+  border-radius: 50%;
+  animation: atlantis-wave-natural 8s ease-in-out infinite;
+}
+
+.features-section__wave--1 {
+  animation-delay: 0s;
+  height: 120%;
+}
+
+.features-section__wave--2 {
+  animation-delay: -3s;
+  opacity: 0.4;
+  height: 110%;
+}
+
+.features-section__wave--3 {
+  animation-delay: -6s;
+  opacity: 0.2;
+  height: 100%;
+}
+
+/* Emoji central */
+.features-section__center-emoji {
+  font-size: 10rem;
+  z-index: 2;
+  filter: drop-shadow(0 0 30px rgba(96, 165, 250, 0.6));
+  transition: all var(--transition-slow);
+}
+
+.features-section__center-emoji--large {
+  font-size: 14rem;
+  animation: atlantis-pulse-gentle 3s ease-in-out infinite;
+}
+
+/* Animaciones específicas del emoji central */
+.story-animation--sailing {
+  animation: atlantis-float-gentle 4s ease-in-out infinite;
+}
+
+.story-animation--mermaid {
+  animation: atlantis-float-gentle 5s ease-in-out infinite, atlantis-glow-soft 4s ease-in-out infinite;
+}
+
+.story-animation--together {
+  animation: atlantis-heartbeat-soft 3s ease-in-out infinite;
+}
+
+.story-animation--atlantis {
+  animation: atlantis-pulse-gentle 3s ease-in-out infinite, atlantis-glow-divine 5s ease-in-out infinite;
+}
+
+/* Emojis adicionales */
+.story-emoji {
+  position: absolute;
+  font-size: 4rem;
+  z-index: 1;
+  transition: all var(--transition-slow);
+}
+
+/* Posiciones ajustadas para contenedor más ancho */
+.story-emoji--star-1 {
+  top: 8%;
+  left: 15%; /* ← AJUSTADO para contenedor más ancho */
+  animation: atlantis-twinkle 4s ease-in-out infinite;
+}
+
+.story-emoji--star-2 {
+  top: 12%;
+  right: 15%; /* ← AJUSTADO para contenedor más ancho */
+  animation: atlantis-twinkle 4s ease-in-out infinite;
+  animation-delay: -2s;
+}
+
+.story-emoji--sparkle-1 {
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: atlantis-sparkle-soft 3s ease-in-out infinite;
+}
+
+.story-emoji--wave-1 {
+  bottom: 15%;
+  left: 10%; /* ← AJUSTADO */
+  animation: atlantis-wave-gentle 5s ease-in-out infinite;
+}
+
+.story-emoji--wave-2 {
+  bottom: 10%;
+  right: 10%; /* ← AJUSTADO */
+  animation: atlantis-wave-gentle 5s ease-in-out infinite;
+  animation-delay: -2.5s;
+}
+
+.story-emoji--underwater-glow {
+  bottom: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 5rem;
+  animation: atlantis-underwater-pulse 3s ease-in-out infinite;
+}
+
+.story-emoji--sparkle-underwater-1 {
+  bottom: 35%;
+  left: 20%; /* ← AJUSTADO */
+  animation: atlantis-sparkle-soft 2.5s ease-in-out infinite;
+}
+
+.story-emoji--sparkle-underwater-2 {
+  bottom: 30%;
+  right: 20%; /* ← AJUSTADO */
+  animation: atlantis-sparkle-soft 2.5s ease-in-out infinite;
+  animation-delay: -1.2s;
+}
+
+.story-emoji--magical-1 {
+  top: 25%;
+  left: 12%; /* ← AJUSTADO */
+  animation: atlantis-magical-drift 6s ease-in-out infinite;
+}
+
+.story-emoji--magical-2 {
+  top: 30%;
+  right: 12%; /* ← AJUSTADO */
+  animation: atlantis-magical-drift 6s ease-in-out infinite;
+  animation-delay: -3s;
+}
+
+.story-emoji--heart-float {
+  top: 35%;
+  right: 25%;
+  animation: atlantis-love-float 4s ease-in-out infinite;
+}
+
+.story-emoji--shell {
+  bottom: 20%;
+  left: 8%; /* ← AJUSTADO */
+  animation: atlantis-seashell-glow 4s ease-in-out infinite;
+}
+
+.story-emoji--fish {
+  bottom: 25%;
+  right: 8%; /* ← AJUSTADO */
+  animation: atlantis-fish-swim 7s ease-in-out infinite;
+}
+
+.story-emoji--sun {
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 5rem;
+  animation: atlantis-sun-radiance 4s ease-in-out infinite;
+}
+
+.story-emoji--cloud-1 {
+  top: 15%;
+  left: 12%; /* ← AJUSTADO */
+  animation: atlantis-cloud-drift 12s linear infinite;
+}
+
+.story-emoji--cloud-2 {
+  top: 22%;
+  right: 12%; /* ← AJUSTADO */
+  animation: atlantis-cloud-drift 12s linear infinite;
+  animation-delay: -6s;
+}
+
+.story-emoji--love-hearts {
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: atlantis-love-pulse 2s ease-in-out infinite;
+}
+
+.story-emoji--trident-1 {
+  top: 8%;
+  left: 12%; /* ← AJUSTADO */
+  font-size: 4.5rem;
+  animation: atlantis-trident-power 4s ease-in-out infinite;
+}
+
+.story-emoji--trident-2 {
+  top: 8%;
+  right: 12%; /* ← AJUSTADO */
+  font-size: 4.5rem;
+  animation: atlantis-trident-power 4s ease-in-out infinite;
+  animation-delay: -2s;
+}
+
+.story-emoji--gem-1 {
+  top: 20%;
+  left: 5%; /* ← AJUSTADO */
+  animation: atlantis-gem-sparkle 3s ease-in-out infinite;
+}
+
+.story-emoji--gem-2 {
+  top: 20%;
+  right: 5%; /* ← AJUSTADO */
+  animation: atlantis-gem-sparkle 3s ease-in-out infinite;
+  animation-delay: -1.5s;
+}
+
+.story-emoji--atlantis-wave-1 {
+  bottom: 8%;
+  left: 3%; /* ← AJUSTADO */
+  animation: atlantis-epic-wave 4s ease-in-out infinite;
+}
+
+.story-emoji--atlantis-wave-2 {
+  bottom: 8%;
+  right: 3%; /* ← AJUSTADO */
+  animation: atlantis-epic-wave 4s ease-in-out infinite;
+  animation-delay: -2s;
+}
+
+.story-emoji--fish-circle-1 {
+  top: 35%;
+  left: 18%; /* ← AJUSTADO */
+  animation: atlantis-fish-circle 8s ease-in-out infinite;
+}
+
+.story-emoji--fish-circle-2 {
+  top: 35%;
+  right: 18%; /* ← AJUSTADO */
+  animation: atlantis-fish-circle 8s ease-in-out infinite;
+  animation-delay: -4s;
+}
+
+.story-emoji--divine-sparkle {
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 4.5rem;
+  animation: atlantis-divine-light 3s ease-in-out infinite;
+}
+
+/* Navegación con botones laterales */
+.features-section__navigation {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1050px; /* ← Un poco más ancho que el contenedor de animación */
+  margin: 0 auto;
+  padding: 0;
+  pointer-events: none; /* ← Permite clicks a través del contenedor */
+}
+
+.features-section__nav-button {
+  background: var(--surface-card);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--border-radius-full);
+  width: 70px; /* ← Ligeramente más pequeños */
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  backdrop-filter: blur(10px);
+  pointer-events: auto; /* ← Restaurar clicks solo en los botones */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* ← Sombra para destacar */
+}
+
+.features-section__nav-button:hover:not(.features-section__nav-button--disabled) {
+  border-color: var(--border-hover);
+  transform: scale(1.15); /* ← Efecto hover más pronunciado */
+  box-shadow: var(--shadow-atlantis);
+}
+
+.features-section__nav-button--disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.features-section__nav-button-emoji {
+  font-size: 1.8rem;
+}
+
+.features-section__nav-spacer {
+  width: 70px;
+  height: 70px;
+  opacity: 0; /* ← Invisible pero mantiene el espacio */
+}
+
+/* Indicador de progreso - ahora centrado abajo */
+.features-section__progress {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: -60px; /* ← Posicionado debajo del contenedor de animación */
+  left: 50%;
+  transform: translateX(-50%);
+}
+/*
+.features-section__progress-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: var(--border-radius-full);
+  background: rgba(96, 165, 250, 0.3);
+  transition: all var(--transition-normal);
+}*/
+
+.features-section__progress-dot--active {
+  background: var(--atlantis-accent);
+  box-shadow: 0 0 15px rgba(96, 165, 250, 0.6);
+  transform: scale(1.4);
+}
+
+/* Ajustar el contenedor de animación para incluir la navegación */
+.features-section__animation-container {
+  position: relative;
+  width: 910px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: var(--spacing-xl) 0 calc(var(--spacing-xl) + 60px) 0; /* ← Espacio extra abajo para el indicador */
+  max-width: 90vw;
+}
+
+
+/* Animaciones completas para dar vida a los emojis de Atlantis */
+/* Archivo: src/styles/globals/animations.css */
+
+/* ========================================
+   ANIMACIONES BÁSICAS REUTILIZABLES
+======================================== */
+
+@keyframes atlantis-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes atlantis-scale-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ========================================
+   ANIMACIONES PARA EMOJIS CENTRALES
+======================================== */
+
+/* Flotación suave para el barco */
+@keyframes atlantis-float-gentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(-1deg);
+  }
+  25% {
+    transform: translateY(-8px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1deg);
+  }
+  75% {
+    transform: translateY(-8px) rotate(0deg);
+  }
+}
+
+/* Latido suave para el corazón y amor */
+@keyframes atlantis-heartbeat-soft {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 20px rgba(244, 114, 182, 0.6));
+  }
+  25% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 25px rgba(244, 114, 182, 0.8));
+  }
+  50% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 30px rgba(244, 114, 182, 1));
+  }
+  75% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 25px rgba(244, 114, 182, 0.8));
+  }
+}
+
+/* Pulso gentil para elementos divinos */
+@keyframes atlantis-pulse-gentle {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 30px rgba(96, 165, 250, 0.6));
+  }
+  50% {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 40px rgba(96, 165, 250, 0.9));
+  }
+}
+
+/* Brillo suave para elementos mágicos */
+@keyframes atlantis-glow-soft {
+  0%, 100% {
+    filter: drop-shadow(0 0 15px rgba(139, 92, 246, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 25px rgba(139, 92, 246, 0.8));
+  }
+}
+
+/* Brillo divino para Atlantis */
+@keyframes atlantis-glow-divine {
+  0%, 100% {
+    filter: drop-shadow(0 0 20px rgba(34, 197, 94, 0.5));
+  }
+  33% {
+    filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.7));
+  }
+  66% {
+    filter: drop-shadow(0 0 35px rgba(168, 85, 247, 0.6));
+  }
+}
+
+/* ========================================
+   ANIMACIONES PARA ELEMENTOS CLIMÁTICOS
+======================================== */
+
+/* Animación para nubes/lluvia - movimiento suave como viento */
+@keyframes atlantis-weather-drift {
+  0%, 100% {
+    transform: translateX(0px) translateY(0px);
+    opacity: 0.8;
+  }
+  25% {
+    transform: translateX(-3px) translateY(-2px);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateX(-6px) translateY(-1px);
+    opacity: 1;
+  }
+  75% {
+    transform: translateX(-3px) translateY(-3px);
+    opacity: 0.9;
+  }
+}
+
+/* Animación para tormentas eléctricas */
+@keyframes atlantis-storm-flash {
+  0%, 90%, 100% {
+    opacity: 0.7;
+    filter: drop-shadow(0 0 10px rgba(139, 69, 19, 0.5));
+  }
+  10% {
+    opacity: 1;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 0, 0.9));
+  }
+}
+
+/* ========================================
+   ANIMACIONES PARA ESTRELLAS Y DESTELLOS
+======================================== */
+
+/* Parpadeo de estrellas */
+@keyframes atlantis-twinkle {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1.2) rotate(90deg);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(0.9) rotate(180deg);
+  }
+  75% {
+    opacity: 1;
+    transform: scale(1.1) rotate(270deg);
+  }
+}
+
+/* Destellos suaves */
+@keyframes atlantis-sparkle-soft {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1) rotate(0deg);
+  }
+  33% {
+    opacity: 1;
+    transform: scale(1.3) rotate(120deg);
+  }
+  66% {
+    opacity: 0.8;
+    transform: scale(0.8) rotate(240deg);
+  }
+}
+
+/* ========================================
+   ANIMACIONES PARA ELEMENTOS ACUÁTICOS
+======================================== */
+
+/* Ondas suaves */
+@keyframes atlantis-wave-gentle {
+  0%, 100% {
+    transform: translateX(0px) translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateX(-5px) translateY(-3px) rotate(-5deg);
+  }
+  50% {
+    transform: translateX(-8px) translateY(-5px) rotate(0deg);
+  }
+  75% {
+    transform: translateX(-5px) translateY(-3px) rotate(5deg);
+  }
+}
+
+/* Ondas naturales de fondo */
+@keyframes atlantis-wave-natural {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* Pulso submarino */
+@keyframes atlantis-underwater-pulse {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+    filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.6));
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 25px rgba(6, 182, 212, 0.9));
+  }
+}
+
+/* ========================================
+   ANIMACIONES PARA GEMAS Y DIAMANTES
+======================================== */
+
+/* Parpadeo de diamantes - SIN ROTACIÓN, solo parpadeo */
+@keyframes atlantis-gem-sparkle {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+    filter: drop-shadow(0 0 15px rgba(167, 243, 208, 0.6));
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 20px rgba(34, 197, 94, 0.8));
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 25px rgba(59, 130, 246, 0.9));
+  }
+  75% {
+    opacity: 1;
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 18px rgba(236, 72, 153, 0.7));
+  }
+}
+
+/* ========================================
+   ANIMACIONES PARA ELEMENTOS MÁGICOS
+======================================== */
+
+/* Deriva mágica para elementos flotantes */
+@keyframes atlantis-magical-drift {
+  0%, 100% {
+    transform: translateX(0px) translateY(0px) rotate(0deg);
+    opacity: 0.8;
+  }
+  25% {
+    transform: translateX(8px) translateY(-10px) rotate(5deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(15px) translateY(-15px) rotate(-3deg);
+    opacity: 0.9;
+  }
+  75% {
+    transform: translateX(8px) translateY(-8px) rotate(2deg);
+    opacity: 1;
+  }
+}
+
+/* Flotación de amor */
+@keyframes atlantis-love-float {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-15px) scale(1.1);
+    opacity: 1;
+  }
+}
+
+/* Pulso de amor */
+@keyframes atlantis-love-pulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 10px rgba(244, 114, 182, 0.5));
+  }
+  25% {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 15px rgba(244, 114, 182, 0.8));
+  }
+  50% {
+    transform: scale(1.4);
+    filter: drop-shadow(0 0 20px rgba(244, 114, 182, 1));
+  }
+  75% {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 15px rgba(244, 114, 182, 0.8));
+  }
+}
+
+/* ========================================
+   ANIMACIONES PARA ELEMENTOS CELESTIALES
+======================================== */
+
+/* Radiación solar */
+@keyframes atlantis-sun-radiance {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+    filter: drop-shadow(0 0 20px rgba(251, 191, 36, 0.7));
+  }
+  25% {
+    transform: rotate(90deg) scale(1.05);
+    filter: drop-shadow(0 0 25px rgba(251, 191, 36, 0.9));
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+    filter: drop-shadow(0 0 30px rgba(251, 191, 36, 1));
+  }
+  75% {
+    transform: rotate(270deg) scale(1.05);
+    filter: drop-shadow(0 0 25px rgba(251, 191, 36, 0.9));
+  }
+}
+
+/* Deriva de nubes - MOVIMIENTO SUAVE COMO VIENTO */
+@keyframes atlantis-cloud-drift {
+  0%, 100% {
+    transform: translateX(0px) translateY(0px);
+    opacity: 0.7;
+  }
+  25% {
+    transform: translateX(4px) translateY(-2px);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateX(8px) translateY(-1px);
+    opacity: 0.9;
+  }
+  75% {
+    transform: translateX(4px) translateY(-3px);
+    opacity: 0.8;
+  }
+}
+
+/* ========================================
+   ANIMACIONES PARA ELEMENTOS MARINOS
+======================================== */
+
+/* Brillo de caracola */
+@keyframes atlantis-seashell-glow {
+  0%, 100% {
+    transform: rotate(-5deg) scale(1);
+    filter: drop-shadow(0 0 12px rgba(236, 72, 153, 0.5));
+  }
+  50% {
+    transform: rotate(5deg) scale(1.08);
+    filter: drop-shadow(0 0 18px rgba(236, 72, 153, 0.8));
+  }
+}
+
+/* Nado de peces */
+@keyframes atlantis-fish-swim {
+  0%, 100% {
+    transform: translateX(0px) translateY(0px) scaleX(1);
+  }
+  25% {
+    transform: translateX(8px) translateY(-3px) scaleX(1);
+  }
+  50% {
+    transform: translateX(15px) translateY(-5px) scaleX(-1);
+  }
+  75% {
+    transform: translateX(8px) translateY(-3px) scaleX(-1);
+  }
+}
+
+/* Círculo de peces */
+@keyframes atlantis-fish-circle {
+  0% {
+    transform: rotate(0deg) translateX(30px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(30px) rotate(-360deg);
+  }
+}
+
+/* ========================================
+   ANIMACIONES PARA ELEMENTOS DIVINOS
+======================================== */
+
+/* Poder del tridente */
+@keyframes atlantis-trident-power {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+    filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.6));
+  }
+  25% {
+    transform: translateY(-5px) rotate(2deg);
+    filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.8));
+  }
+  50% {
+    transform: translateY(-8px) rotate(0deg);
+    filter: drop-shadow(0 0 25px rgba(59, 130, 246, 1));
+  }
+  75% {
+    transform: translateY(-5px) rotate(-2deg);
+    filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.8));
+  }
+}
+
+/* Ondas épicas */
+@keyframes atlantis-epic-wave {
+  0%, 100% {
+    transform: translateY(0px) scaleX(1);
+    opacity: 0.8;
+  }
+  25% {
+    transform: translateY(-8px) scaleX(1.1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-12px) scaleX(1.2);
+    opacity: 0.9;
+  }
+  75% {
+    transform: translateY(-8px) scaleX(1.1);
+    opacity: 1;
+  }
+}
+
+/* Luz divina */
+@keyframes atlantis-divine-light {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1.15) rotate(90deg);
+    filter: drop-shadow(0 0 30px rgba(96, 165, 250, 0.8));
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.25) rotate(180deg);
+    filter: drop-shadow(0 0 35px rgba(168, 85, 247, 0.9));
+  }
+  75% {
+    opacity: 1;
+    transform: scale(1.15) rotate(270deg);
+    filter: drop-shadow(0 0 30px rgba(34, 197, 94, 0.8));
+  }
+}
+
+/* ========================================
+   ANIMACIONES PARA EL CORAZÓN INTERACTIVO
+======================================== */
+
+@keyframes atlantis-heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+}
+
+/* ========================================
+   ASIGNACIONES ESPECÍFICAS POR EMOJI
+======================================== */
+
+/* Elementos climáticos (primera escena) */
+.story-emoji--star-1,
+.story-emoji--star-2 {
+  animation: atlantis-weather-drift 5s ease-in-out infinite;
+}
+
+.story-emoji--sparkle-1 {
+  animation: atlantis-storm-flash 3s ease-in-out infinite;
+}
+
+/* Diamantes/gemas con parpadeo */
+.story-emoji--sparkle-underwater-1,
+.story-emoji--sparkle-underwater-2,
+.story-emoji--gem-1,
+.story-emoji--gem-2 {
+  animation: atlantis-gem-sparkle 3s ease-in-out infinite;
+}
+
+/* Ondas */
+.story-emoji--wave-1,
+.story-emoji--wave-2,
+.story-emoji--atlantis-wave-1,
+.story-emoji--atlantis-wave-2 {
+  animation: atlantis-wave-gentle 5s ease-in-out infinite;
+}
+
+/* Sirena submarina */
+.story-emoji--underwater-glow {
+  animation: atlantis-underwater-pulse 3s ease-in-out infinite;
+}
+
+/* Estrellas brillantes */
+.story-emoji--magical-1,
+.story-emoji--magical-2 {
+  animation: atlantis-twinkle 4s ease-in-out infinite;
+}
+
+/* Corazones flotantes */
+.story-emoji--heart-float,
+.story-emoji--love-hearts {
+  animation: atlantis-love-pulse 2s ease-in-out infinite;
+}
+
+/* Caracola */
+.story-emoji--shell {
+  animation: atlantis-seashell-glow 4s ease-in-out infinite;
+}
+
+/* Peces */
+.story-emoji--fish {
+  animation: atlantis-fish-swim 7s ease-in-out infinite;
+}
+
+.story-emoji--fish-circle-1,
+.story-emoji--fish-circle-2 {
+  animation: atlantis-fish-circle 8s ease-in-out infinite;
+}
+
+/* Sol */
+.story-emoji--sun {
+  animation: atlantis-sun-radiance 4s ease-in-out infinite;
+}
+
+/* Nubes - MOVIMIENTO SUAVE COMO VIENTO */
+.story-emoji--cloud-1,
+.story-emoji--cloud-2 {
+  animation: atlantis-cloud-drift 8s ease-in-out infinite;
+}
+
+/* Tridentes */
+.story-emoji--trident-1,
+.story-emoji--trident-2 {
+  animation: atlantis-trident-power 4s ease-in-out infinite;
+}
+
+/* Destello divino */
+.story-emoji--divine-sparkle {
+  animation: atlantis-divine-light 3s ease-in-out infinite;
+}
+
+/* ========================================
+   EFECTOS ESPECIALES Y HOVER
+======================================== */
+
+/* Hover effects para elementos interactivos */
+.story-emoji:hover {
+  animation-duration: 0.5s !important;
+  transform: scale(1.2) !important;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+/* ========================================
+   RESPONSIVE ANIMATIONS
+======================================== */
+
+@media (max-width: 768px) {
+  /* Animaciones más suaves en móvil */
+  .story-emoji {
+    animation-duration: 1.5s !important;
+  }
+  
+  .features-section__center-emoji {
+    animation-duration: 2s !important;
+  }
+}
+
+/* Reducir movimiento para usuarios sensibles */
+@media (prefers-reduced-motion: reduce) {
+  .story-emoji,
+  .features-section__center-emoji,
+  .features-section__wave {
+    animation: none !important;
+  }
+  
+  .story-emoji {
+    opacity: 0.9;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .features-section {
+    padding: var(--spacing-lg) 0; /* ← REDUCIDO */
+    min-height: 68vh; /* ← REDUCIDO 20% (85vh * 0.8) */
+  }
+  
+  .features-section__story-container {
+    max-width: 100%;
+    padding: var(--spacing-lg);
+    gap: var(--spacing-xl); /* ← REDUCIDO */
+  }
+  
+  .features-section__animation-container {
+    width: 90vw;
+    max-width: 500px; /* ← AUMENTADO PROPORCIONALMENTE */
+    height: 350px;
+  }
+  
+  .features-section__story-text {
+    font-size: var(--font-size-xl);
+    padding: 0 var(--spacing-md);
+  }
+  
+  .features-section__story-text--large {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .features-section__center-emoji {
+    font-size: 6rem;
+  }
+  
+  .features-section__center-emoji--large {
+    font-size: 8rem;
+  }
+  
+  .features-section__navigation {
+    padding: 0 var(--spacing-lg);
+    margin-top: var(--spacing-xl); /* ← REDUCIDO */
+  }
+  
+  .features-section__nav-button {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .features-section__nav-spacer {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .features-section__nav-button-emoji {
+    font-size: 1.5rem;
+  }
+  
+  .story-emoji {
+    font-size: 2.5rem;
+  }
+  
+  .features-section__progress-dot {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+

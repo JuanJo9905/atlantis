@@ -1,0 +1,206 @@
+/* src/components/HeroSection/HeroSection.css */
+
+.hero-section {
+  text-align: center;
+  padding: var(--spacing-xl) 0 var(--spacing-md) 0;
+  position: relative;
+  overflow: hidden;
+  min-height: 45vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.hero-section__animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-section__bubble {
+  position: absolute;
+  background: radial-gradient(
+    circle, 
+    rgba(96, 165, 250, 0.4) 0%, 
+    rgba(59, 130, 246, 0.2) 70%, 
+    transparent 100%
+  );
+  border-radius: var(--border-radius-full);
+  animation: atlantis-float 6s ease-in-out infinite;
+}
+
+.hero-section__bubble--1 {
+  width: 60px;
+  height: 60px;
+  top: 20%;
+  left: 10%;
+  animation-delay: -1s;
+}
+
+.hero-section__bubble--2 {
+  width: 40px;
+  height: 40px;
+  top: 60%;
+  right: 20%;
+  animation-delay: -3s;
+}
+
+.hero-section__bubble--3 {
+  width: 80px;
+  height: 80px;
+  bottom: 20%;
+  left: 15%;
+  animation-delay: -2s;
+}
+
+.hero-section__bubble--4 {
+  width: 50px;
+  height: 50px;
+  top: 30%;
+  right: 10%;
+  animation-delay: -4s;
+}
+
+.hero-section__content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg); /* ← Padding lateral solo para el contenido */
+}
+
+.hero-section__title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: var(--spacing-md); /* ← REDUCIDO: de lg a md */
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+.hero-section__title-gradient {
+  background: linear-gradient(
+    135deg, 
+    var(--atlantis-accent), 
+    var(--atlantis-light), 
+    var(--atlantis-deep)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-section__subtitle {
+  font-size: var(--font-size-xl);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-xl); /* ← REDUCIDO: de 2xl a xl */
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.hero-section__heart {
+  margin-top: var(--spacing-lg); /* ← REDUCIDO: de 2xl a lg */
+}
+
+.hero-section__heart-icon {
+  color: var(--heart-color);
+  animation: atlantis-heartbeat 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(244, 114, 182, 0.3));
+}
+
+.hero-section__heart-icon:hover {
+  animation: atlantis-heartbeat .5s ease-in-out infinite;
+  cursor: pointer;
+}
+
+/* Estilos para el corazón interactivo */
+.hero-section__heart {
+  margin-top: var(--spacing-2xl);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-lg);
+  position: relative;
+  display: inline-block;
+}
+
+.hero-section__heart:hover {
+  transform: scale(1.05);
+  background: rgba(244, 114, 182, 0.1);
+  box-shadow: 0 0 30px rgba(244, 114, 182, 0.4);
+}
+
+.hero-section__heart:active {
+  transform: scale(0.95);
+}
+
+.hero-section__heart:focus {
+  outline: 2px solid var(--heart-color);
+  outline-offset: 4px;
+}
+
+.hero-section__heart-hint {
+  margin-top: var(--spacing-md);
+  font-size: var(--font-size-sm);
+  color: var(--text-accent);
+  opacity: 0;
+  animation: atlantis-fade-in-hint 3s ease-in-out 2s forwards;
+  text-align: center;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+.hero-section__heart:hover .hero-section__heart-hint {
+  opacity: 1;
+  color: var(--heart-color);
+  text-shadow: 0 0 10px rgba(244, 114, 182, 0.6);
+}
+
+/* Animación suave para el hint */
+@keyframes atlantis-fade-in-hint {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 0.8;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive para el corazón interactivo */
+@media (max-width: 768px) {
+  .hero-section__heart {
+    padding: var(--spacing-md);
+  }
+  
+  .hero-section__heart-hint {
+    font-size: var(--font-size-xs);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: var(--spacing-lg) 0 var(--spacing-md) 0; /* ← REDUCIDO para móvil */
+    min-height: 40vh; /* ← REDUCIDO para móvil */
+  }
+  
+  .hero-section__content {
+    padding: 0 var(--spacing-md);
+  }
+  
+  .hero-section__subtitle {
+    font-size: var(--font-size-lg);
+  }
+  
+  .hero-section__heart-icon {
+    width: 32px;
+    height: 32px;
+  }
+}

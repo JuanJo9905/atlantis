@@ -1,0 +1,127 @@
+/* src/pages/Home/Home.css */
+
+.home {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.home > .hero-section,
+.home > .features-section {
+  width: 100%;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* ELIMINAR COMPLETAMENTE la separación entre Hero y Features */
+.home > .features-section {
+  margin-top: calc(-1 * var(--spacing-2xl));
+  position: relative;
+  z-index: 1;
+}
+
+/* Sección de películas destacadas con padding contenido */
+.home__movies-section {
+  margin-top: var(--spacing-2xl); /* ← REDUCIDO de 3xl a 2xl */
+  padding: var(--spacing-xl) var(--spacing-lg); /* ← REDUCIDO de 2xl a xl */
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.home__movies-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl); /* ← REDUCIDO de 2xl a xl */
+}
+
+.home__movies-title {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  color: var(--text-primary);
+  background: linear-gradient(
+    135deg, 
+    var(--text-primary) 0%, 
+    var(--text-accent) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.home__movies-subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  font-weight: 300;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.home__movies-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xl); /* ← REDUCIDO de 2xl a xl */
+}
+
+/* Animaciones para la carga inicial */
+.home__movies-section {
+  animation: atlantis-fade-in 0.8s ease-out forwards;
+}
+
+.home__movies-list > * {
+  animation: atlantis-scale-in 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.home__movies-list > *:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.home__movies-list > *:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.home__movies-list > *:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Animación de revelación para el FeaturesSection */
+.home > div[data-features-reveal] {
+  animation: atlantis-story-reveal 1s ease-out forwards;
+}
+
+@keyframes atlantis-story-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Efecto de scroll suave cuando aparece el FeaturesSection */
+.home {
+  scroll-behavior: smooth;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .home__movies-section {
+    margin-top: var(--spacing-xl); /* ← REDUCIDO */
+    padding: var(--spacing-lg) var(--spacing-md); /* ← REDUCIDO */
+  }
+  
+  .home__movies-title {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .home__movies-subtitle {
+    font-size: var(--font-size-base);
+  }
+}

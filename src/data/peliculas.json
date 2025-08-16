@@ -1,0 +1,94 @@
+{
+  "peliculasData": [
+    {
+      "id": 1,
+      "nombre": "Kimi no Na wa",
+      "puntuacion": 10,
+      "imagen": "https://th.bing.com/th/id/OIP.GOJstb8gRR1DULwHO-j30gHaEK?w=364&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3",
+      "descripcion": "Posiblemente la pelicula que más nos representa, dos desconocidos cuyos destinos se cruzan y se enamoran ... no solo fue una de las primeras peliculas que nos vimos, si no la representación de nuestra historia de amor ",
+      "categoria": "Anime",
+      "año": 2016,
+      "director": "Makoto Shinkai"
+    },
+    {
+      "id": 2,
+      "nombre": "Coraline",
+      "puntuacion": 8.5,
+      "imagen": "https://www.carlospazvivo.com/wp-content/uploads/2024/02/1104742-coraline-wallpaper-1920x1080-for-iphone-6.jpg",
+      "descripcion": "Una chica curiosa, inteligente y valiente que no le teme a explorar lo desconocido, así es mi princesa y la veo reflejada en esa chica de impermeable amarillo",
+      "categoria": "Fantasía",
+      "año": 2002,
+      "director": "Neil Gaiman"
+    },
+    {
+      "id": 3,
+      "nombre": "Naruto",
+      "puntuacion": 10,
+      "imagen": "https://tse3.mm.bing.net/th/id/OIP.P7kz7Pb7cHth7pvBh5OZKwHaEL?rs=1&pid=ImgDetMain&o=7&rm=3",
+      "descripcion": "Probablemente el anime al que mas tiempo le habremos dedicado, Naruto nos ha acompañado desde el principio e incluso hoy día sigue con nosotros un anime tan especial, tan representativo y lleno de recuerdos tan hermosos ocupará siempre un puesto especial en nuestros corazónes",
+      "categoria": "Anime",
+      "año": 2007,
+      "director": "Masashi Kishimoto"
+    },
+    {
+      "id": 4,
+      "nombre": "American Horror History",
+      "puntuacion": 8,
+      "imagen": "https://tse3.mm.bing.net/th/id/OIP.45y2B3lNLIf_eKk3fXV12AHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
+      "descripcion": "Otro clásico que nos ha tenido en frente de la pantalla intrigados por lo que pasará despúes, no todas sus temporadas nos han atrapado de la misma manera pero sin duda es una serie especial",
+      "categoria": "Terror",
+      "año": 2011,
+      "director": "Ryan Murphy"
+    },
+    {
+      "id": 5,
+      "nombre": "Una Pelicula de Huevos",
+      "puntuacion": 9,
+      "imagen": "https://tse3.mm.bing.net/th/id/OIP.35P36_87xMxwlM5JgYOZ1wHaE4?rs=1&pid=ImgDetMain&o=7&rm=3",
+      "descripcion": "Que bonito encontrar una persona con un humor similar al tuyo, esta pelicula con un humor tan especial debe ser obligatorio verla con alguien especial. Es una experiencia muy bonita",
+      "categoria": "Comedia",
+      "año": 2006,
+      "director": "Rodolfo Riva Palacio"
+    },
+    {
+      "id": 6,
+      "nombre": "Breaking Bad",
+      "puntuacion": 9.5,
+      "imagen": "https://tse1.mm.bing.net/th/id/OIP.F71fiMf5GfMEc5Dx52Lf0QHaE8?w=1170&h=780&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "descripcion": "No puede faltar, ver la transofrmación de Walter en una historia con momentos tan crudos y reflexivos fue una montaña rusa de emociones y ese final ... ambos recordamos el final y como lo pasamos, es una anecdota solo nuestra que recordaremos toda nuestras vidas",
+      "categoria": "Thriller",
+      "año": 2013,
+      "director": "Vince Gilligan"
+    },
+    {
+      "id": 7,
+      "nombre": "Scavengers Reign",
+      "puntuacion": 10,
+      "imagen": "https://cdn.kulturegeek.fr/wp-content/uploads/2023/10/scavengers_reign.jpg",
+      "descripcion": "Te puede parecer una sorpresa pero esta serie es una de mis favoritas, recuerdo aquellos días en donde almorzabamos mientras la veiamos, tus deliciosos platillos, tu dulce compañia y una serie que nos mantuvo curiosos de principio a fin ... ciertamente es una seríe que me hace sonreir cada vez que la recuerdo",
+      "categoria": "Ciencia Ficción",
+      "año": 2023,
+      "director": "Joseph Bennett"
+    },
+    {
+      "id": 8,
+      "nombre": "Inuyasha",
+      "puntuacion": 9.1,
+      "imagen": "https://tse1.mm.bing.net/th/id/OIP.8ILHApSazxw_6g8qF7VaIAHaFY?rs=1&pid=ImgDetMain&o=7&rm=3",
+      "descripcion": "Divertida y profunda, inuyasha es definitivamente uno de nuestros animes favoritos que de ahora en unos cuantos años recordaremos con gran cariño aquellas veces que veíamos y reiamos mientras jugabamos Brawl",
+      "categoria": "Anime",
+      "año": 1996,
+      "director": "Rumiko Takahashi"
+    },
+    {
+      "id": 9,
+      "nombre": "You",
+      "puntuacion": 9.1,
+      "imagen": "https://www.coxinhanerd.com.br/wp-content/uploads/2020/11/you-serie-netflix-3-temporada-e1596648859617.jpg",
+      "descripcion": "Una historia bastante reciente y que nos unió contra el mismo enemigo, algo que considero no es muy común pero que nos tuvo al pendiente de que atraparan al desgraciado ... como sea lo más cierto de todo esto es que YO TE LOBO 🐺💖(I Wolf you)",
+      "categoria": "Thriller",
+      "año": 2018,
+      "director": "Greg Berlanti"
+    }
+  ]
+}
